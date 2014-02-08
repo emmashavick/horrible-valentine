@@ -13,15 +13,15 @@ post '/' do
 
   # horrible nested if/else here
   # change me please!
-  if significant_other == 'cat'
-    @gift_name = 'Totally Fun Things to Do with Your Cat (Book)'
-    @gift_url  = 'http://www.amazon.com/Totally-Fun-Things-Your-Cat/dp/0471195758'
-    @gift_img  = 'Totally-Fun-Things-to-Do-with-Your-Cat.jpg'
+  if significant_other == 'sport' && significant_other == 'animals'
+    @gift_name = 'Vet'
+    @gift_url  = 'http://www.rcvs.org.uk/education/i-want-to-be-a-vet/'
+    @gift_img  = 'vet.png'
   else
     if likes == 'no-clue'
-      @gift_name = 'Sex For Dummies (Book)'
-      @gift_url  = 'http://www.amazon.com/Sex-For-Dummies-Ruth-Westheimer/dp/047004523X'
-      @gift_img  = 'Sex-For-Dummies.jpg'
+      @gift_name = 'Scuba diving instructor'
+      @gift_url  = 'http://www.padi.com/scuba/scuba-diving-guide/teach-scuba-diving/go-pro-scuba-diving-careers/'
+      @gift_img  = 'scuba.jpeg'
     else
       if likes == 'gardening'
         @gift_name = 'The Humanure Handbook: A Guide to Composting Human Manure'

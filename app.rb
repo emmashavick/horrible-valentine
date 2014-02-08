@@ -13,17 +13,19 @@ post '/' do
 
   # horrible nested if/else here
   # change me please!
-  if me == 'animal' && (likes == 'outdoor' || likes = 'science' || likes = 'sports')
-    @gift_name = 'Vet'
-    @gift_url  = 'http://www.rcvs.org.uk/education/i-want-to-be-a-vet/'
-    @gift_img  = 'vet.png'
-  else
-    if likes == 'no-clue'
+   if likes == 'no-clue'
       @gift_name = 'Scuba diving instructor'
       @gift_url  = 'http://www.padi.com/scuba/scuba-diving-guide/teach-scuba-diving/go-pro-scuba-diving-careers/'
       @gift_img  = 'scuba.jpeg'
+
     else
-      if me == 'geek' && (likes == 'science' || likes = 'outdoor')
+      if me == 'animal' && (likes == 'outdoor' || likes == 'science' || likes == 'sports')
+    @gift_name = 'Vet'
+    @gift_url  = 'http://www.rcvs.org.uk/education/i-want-to-be-a-vet/'
+    @gift_img  = 'vet.png'
+
+    else
+      if me == 'geek' && (likes == 'science' || likes == 'outdoor')
         @gift_name = 'Computer Scientist'
         @gift_url  = 'http://www.city.ac.uk/courses/undergraduate/computer-science'
         @gift_img  = 'geek.jpg'
@@ -40,7 +42,7 @@ post '/' do
         @gift_img  = 'sound.jpg'
 
         else
-          if me == 'sport' && (likes == 'sports' || likes = 'outdoor')
+          if me == 'sport' && (likes == 'sports' || likes == 'outdoor')
         @gift_name = 'Professional Athlete'
         @gift_url  = 'http://money.howstuffworks.com/how-to-become-a-professional-athlete.htm'
         @gift_img  = 'athlete.jpg'
@@ -65,6 +67,7 @@ post '/' do
       end
     end
   end
+end
 
   erb :result
 

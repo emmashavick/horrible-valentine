@@ -6,9 +6,9 @@ end
 
 post '/' do
   # debug
-  raise params.inspect
+  #raise params.inspect
 
-  significant_other = params[:me]
+  me = params[:me]
   likes  = params[:likes]
 
    if likes == 'no-clue'
@@ -21,12 +21,12 @@ post '/' do
     @gift_url  = 'http://www.rcvs.org.uk/education/i-want-to-be-a-vet/'
     @gift_img  = 'vet.png'
 
-    elsif me == 'geek' && if (likes == 'science' || likes == 'outdoor')
+    elsif (me == 'geek' && (likes == 'science' || likes == 'outdoor'))
         @gift_name = 'Computer Scientist'
         @gift_url  = 'http://www.city.ac.uk/courses/undergraduate/computer-science'
         @gift_img  = 'geek.jpg'
      
-      elsif (me == 'geek' && likes == 'sports') || if (me == 'sports' && likes == science)
+      elsif ((me == 'geek' && likes == 'sports') || (me == 'sports' && likes == science))
           @gift_name = 'Sports Science Engineer'
           @gift_url = 'https://www.strath.ac.uk/dmem/prospectivestudents/undergraduatecourses/sportsengineering/'
           @gift_img = 'sport-science.jpg'
@@ -36,7 +36,7 @@ post '/' do
         @gift_url  = 'http://www.pointblanklondon.com/courses/music-production-courses.php'
         @gift_img  = 'sound.jpg'
 
-        elsif me == 'sport' && if(likes == 'sports' || likes == 'outdoor')
+        elsif (me == 'sport' && (likes == 'sports' || likes == 'outdoor'))
         @gift_name = 'Professional Athlete'
         @gift_url  = 'http://money.howstuffworks.com/how-to-become-a-professional-athlete.htm'
         @gift_img  = 'athlete.jpg'
